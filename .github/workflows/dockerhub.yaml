@@ -1,0 +1,13 @@
+name: DockerHub
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container:
+      image: neotracker/neo-one-circleci-node:10.16.0-1
+    steps:
+      - uses: actions/checkout@master
+      - uses: ./
+        env:
+          DOCKER_USERNAME: afragapane
+          DOCKER_PASSWORD: jP5cUW1#iG2D
